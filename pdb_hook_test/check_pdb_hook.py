@@ -10,7 +10,7 @@ def check_pdb_hook(files: Sequence[str], strict: bool = False) -> int:
     ret_val = 0
     for filename in filtered_files:
         check = subprocess.run(
-            ['grep', 'pdb.set_trace', filename],
+            ['grep', 'breakpoint', filename],
             stdout=subprocess.PIPE,
             stderr=subprocess.DEVNULL,
             encoding='utf-8',
